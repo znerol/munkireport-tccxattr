@@ -14,7 +14,7 @@ TCCDIR="/Library/Application Support/com.apple.TCC"
 VALUE="$(/usr/bin/xattr -p com.apple.rootless "${TCCDIR}" 2>/dev/null)"
 
 if [ "${VALUE}" = "TCC" ]; then
-    echo present > "${DIR}/cache/tcc.txt"
+    echo present > "${DIR}/cache/tccxattr.txt"
 else
-    echo absent > "${DIR}/cache/tcc.txt"
+    echo absent > "${DIR}/cache/tccxattr.txt"
 fi
