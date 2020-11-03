@@ -1,0 +1,8 @@
+{
+    "name": "znerol/munkireport-tcc-xattr",
+    "description": "TCC extended attribute chack for munkireport.",
+    "license": "MIT",
+    "require": {
+        "php":"^7.0"
+    }
+}

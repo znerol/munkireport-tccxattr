@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# Skip manual check
+if [ "${1}" = 'manualcheck' ]; then
+	echo 'Manual check: skipping'
+	exit 0
+fi
+
+DIR=$(dirname "${0}")
+
+mkdir -p "${DIR}/cache"
+
+TCCDIR="/Library/Application Support/com.apple.TCC"
+VALUE="$(/usr/bin/xattr -p com.apple.rootless "${TCCDIR}" 2>/dev/null)"
+
+if [ "${VALUE}" = "TCC" ]; then
+    echo present > "${DIR}/cache/tcc.txt"
+else
+    echo absent > "${DIR}/cache/tcc.txt"
+fi
